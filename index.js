@@ -1,12 +1,12 @@
 
 
-// =========== NODE MODULES ===============
+// ============== NODE MODULES ===============
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-// const util = require('util');
 
-// Imports generateMarkdown script from 'module.exports' in generate markdown script
+// =============== IMPORT SCRIPT =================
+
 const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // =============  PROMPT ARRAY  ==============
@@ -70,11 +70,11 @@ const prompts = [
 
 inquirer
 
-  .prompt(prompts) // Passes prompts
+  .prompt(prompts)
 
   .then((response) => {
 
-    writeToFile(response); // then passes the writeToFile function to write the responses to the readme file  
+    writeToFile(response);
 
   });
 
@@ -88,14 +88,6 @@ function writeToFile(response) {
       : console.log("Success!")
   })
 };
-
-// these are uneeded...
-
-// TODO: Create a function to initialize app
-// function init() {}
-
-// Function call to initialize app
-// init();
 
 
 
