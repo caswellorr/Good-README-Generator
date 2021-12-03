@@ -4,10 +4,10 @@
 
 const inquirer = require('inquirer');
 const fs = require('fs');
-const util = require('util');
+// const util = require('util');
 
-// Imports generateMarkdown script -- why was 'markdown' turning yellow initially? and how was a second const created? deleted, but curious.. perhaps the import in the other script file? 
-const markdown = require('./utils/generateMarkdown.js');
+// Imports generateMarkdown script from 'module.exports' in generate markdown script
+const generateMarkdown = require('./utils/generateMarkdown.js');
 
 // =============  PROMPT ARRAY  ==============
 
@@ -63,18 +63,18 @@ const prompts = [
     message: 'What license are you using?',
     choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
   }
-  
-]
+
+];
 
 // ================= INQUIRER ===================
 
 inquirer
 
-  .prompt (prompts) // Passes prompts
+  .prompt(prompts) // Passes prompts
 
   .then((response) => {
 
-      writeToFile(response);
+    writeToFile(response); // then passes the writeToFile function to write the responses to the readme file
 
   });
 
@@ -84,12 +84,10 @@ function writeToFile(response) {
 
   fs.writeFile('README.md', generateMarkdown(response), (err) => {
     err
-    ? console.log(err)
-    : console.log("Success!")
+      ? console.log(err)
+      : console.log("Success!")
   })
-}
-
-// what are these for??
+};
 
 // TODO: Create a function to initialize app
 // function init() {}

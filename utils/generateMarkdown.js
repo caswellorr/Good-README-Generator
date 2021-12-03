@@ -2,6 +2,8 @@
 // If there is no license, return an empty string
 //function renderLicenseBadge(license) {}
 
+// ** use conditional - 3 options - connected to the license list in the index
+
 // TODO: Create a function that returns the license link
 // If there is no license, return an empty string
 //function renderLicenseLink(license) {}
@@ -18,12 +20,13 @@
 // ============ GENERATE MARKDOWN FUNCTION ================
 // user input from terminal fills the interpolated strings
 
-function generateMarkdown (response){
+function generateMarkdown(response) {
 
   return `
   # ${response.title} 
 
   ## Description
+
   ${response.description}
  
   ## Table of Contents
@@ -71,7 +74,9 @@ function generateMarkdown (response){
   This project is licensed under ${response.license} 
 `
 
-}
+};
 
-// what is this here for? if anyhthing shouldn't it be pulling the prompts in??
-// module.exports = generateMarkdown;
+// ============ EXPORT TO OTHER INDEX ================
+
+// exports generateMarkdown to index, connected by the 'required'
+module.exports = generateMarkdown;

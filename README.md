@@ -1,7 +1,8 @@
 
-  # Test 
+  # Readme Generator 
+
   ## Description
-  it is  a test
+  It produces a 
  
   ## Table of Contents
 
@@ -17,29 +18,29 @@
 
   Included is a step-by-step description of how to get the development environment running:
 
-    ``` undefined ```
+    uses inquirer and file sysytem nodes
 
   ## Usage
 
-    usw ti to holler
+    acces in terminal with node 
 
   ## Contribution Guidelines
 
-    anhone can contribute
+    everything goes
  
   ## Tests
 
   In order to test, open the console and run the following:
 
-    ``` fs.writeFile("README.md", generateMarkdown(), (error)) ```
+    ``` testing testing ```
 
   ## Questions
 
   If you have any questions about the repo, please feel free to reach out.
 
-    GitHub Profile: opk 
+    GitHub Profile: github.com
 
-    Email: lala
+    Email: caswell.orr@github.com
 
 ---
 
