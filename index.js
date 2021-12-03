@@ -1,22 +1,28 @@
 
+// TODO: Include packages needed for this application
 // =========== NODE MODULES ===============
 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
+// Import generateMarkdown
+const markdown = require('./utils/generateMarkdown.js');
+const generateMarkdown = require('./utils/generateMarkdown.js');
+
+// TODO: Create an array of questions for user input
 // =============  PROMPT ARRAY  ==============
 // displays in terminal with node.js
 
 const prompts = [
   {
     type: 'input',
-    name: 'Title',
+    name: 'title',
     message: 'What is the title of the project?'
   },
   {
     type: 'input',
-    name: 'Description',
+    name: 'description',
     message: 'Provide a short description explaining the what, why, and how of your project: '
   },
   {
@@ -26,121 +32,72 @@ const prompts = [
   },
   {
     type: 'input',
-    name: 'Installation',
+    name: 'installation',
     message: 'What are the steps required to install your project?'
   },
   {
     type: 'input',
-    name: 'Usage',
+    name: 'usage',
     message: 'Please provide instructions for use: '
   },
   {
     type: 'input',
-    name: 'Contribute',
+    name: 'contribute',
     message: 'Please include Contribution Guidelines: '
   },
   {
     type: 'input',
-    name: 'Test',
+    name: 'test',
     message: 'Please provide examples on how to run tests on your application here: '
   },
   {
     type: 'input',
-    name: 'Link',
+    name: 'link',
     message: 'Please enter the link to your GitHub profile: '
   },
   {
     type: 'input',
-    name: 'Email',
+    name: 'email',
     message: 'Please enter your Email: '
   },
   {
     type: 'list',
-    name: 'License',
+    name: 'license',
     message: 'What license are you using?',
     choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
   }
   
 ]
 
-console.log(prompts);
-
 // ================= INQUIRER ===================
-// runs inquirer to interact with terminal??
 
 inquirer
 
-  .prompt (prompts); // Passes prompts
+  .prompt (prompts) // Passes prompts
 
-  .then((answers) => {
-      // Uses user feedback for... to generate the markdown??
-      generateMarkdown(answers)
+  .then((response) => {
 
-  }) 
+      writeToFile(response);
 
-  .catch ((error) => {
-    
-    if (error.isTyError){
-      // Prompt couldn't be rendered in the current environment
-    } else {
-      // Something else went wrong
-    }
   });
 
-// ============ GENERATE MARKDOWN FUNCTION ================
-// user input from terminal fills the interpolated strings
+  // TODO: Create a function to write README file
+// ================ WRITE TO FILE FUNCTION ============ 
 
-function generateMarkdown (answers){
+function writeToFile(response) {
 
-  return `
-  # ${answers.Title} ${licenseBadge}
-  ## Descritpion
-  ${answers.Description}
- 
-  ## Table of Contents
-
-  * [Installation](#installation)
-  * [Usage](#usage)
-  * [License](#license)
-  * [Contribution Guidelines](#contribution-guidelines)
-  * [Test](#test)
-  * [Questions](#questions)
-  * [License](#license)
- 
-  ## Installation
-
-  Included is a step-by-step description of how to get the development environment running:
-
-    \`\`\` ${answers.Installtion} \`\`\`
-
-  ## Usage
-
-    ${answers.Usage}
-
-  ## Contribution Guidelines
-
-    ${answers.Contribute}
- 
-  ## Tests
-
-  In order to test, open the console and run the following:
-
-    \`\`\` ${answers.Test} \`\`\`
-
-  ## Questions
-
-  If you have any questions about the repo, please feel free to reach out.
-
-    GitHub Profile: ${answers.Link}
-
-    Email: ${answers.Email}
-
----
-
- ## License
-
-  This project is licensed under ${answers.License} 
-`
-
+  fs.writeFile('README.md', generateMarkdown(response), (err) => {
+    err
+    ? console.log(err)
+    : console.log("Success!")
+  })
 }
+
+// // TODO: Create a function to initialize app
+// function init() {}
+
+// // Function call to initialize app
+// init();
+
+
 
