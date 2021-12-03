@@ -1,18 +1,15 @@
 
-// TODO: Include packages needed for this application
+
 // =========== NODE MODULES ===============
 
 const inquirer = require('inquirer');
 const fs = require('fs');
 const util = require('util');
 
-// Import generateMarkdown
+// Imports generateMarkdown script -- why was 'markdown' turning yellow initially? and how was a second const created? deleted, but curious.. perhaps the import in the other script file? 
 const markdown = require('./utils/generateMarkdown.js');
-const generateMarkdown = require('./utils/generateMarkdown.js');
 
-// TODO: Create an array of questions for user input
 // =============  PROMPT ARRAY  ==============
-// displays in terminal with node.js
 
 const prompts = [
   {
@@ -81,7 +78,6 @@ inquirer
 
   });
 
-  // TODO: Create a function to write README file
 // ================ WRITE TO FILE FUNCTION ============ 
 
 function writeToFile(response) {
@@ -93,10 +89,12 @@ function writeToFile(response) {
   })
 }
 
-// // TODO: Create a function to initialize app
+// what are these for??
+
+// TODO: Create a function to initialize app
 // function init() {}
 
-// // Function call to initialize app
+// Function call to initialize app
 // init();
 
 
