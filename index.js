@@ -61,7 +61,7 @@ const prompts = [
     type: 'list',
     name: 'license',
     message: 'What license are you using?',
-    choices: ["MIT", "APACHE 2.0", "GPL 3.0", "BSD 3", "None"]
+    choices: ["MIT", "APACHE 2.0", "WTFPL", "None"]
   }
 
 ];
@@ -74,7 +74,7 @@ inquirer
 
   .then((response) => {
 
-    writeToFile(response); // then passes the writeToFile function to write the responses to the readme file
+    writeToFile(response); // then passes the writeToFile function to write the responses to the readme file  
 
   });
 
@@ -88,6 +88,8 @@ function writeToFile(response) {
       : console.log("Success!")
   })
 };
+
+// these are uneeded...
 
 // TODO: Create a function to initialize app
 // function init() {}

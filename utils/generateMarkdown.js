@@ -1,33 +1,45 @@
 // TODO: Create a function that returns a license badge based on which license is passed in
 // If there is no license, return an empty string
-//function renderLicenseBadge(license) {}
 
-// ** use conditional - 3 options - connected to the license list in the index
+function renderLicenseBadge(license) {
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
-//function renderLicenseLink(license) {}
+  if (license === 'MIT') {
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
-// function renderLicenseSection(license) {}
+    return '[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)'
+    
+      
+  }
+  
+  else if (license === 'APACHE 2.0') {
 
-// ${renderLicenseBadge}
+    return '[![License](https://img.shields.io/badge/License-Apache_2.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)'
 
+  } 
+  
+  else if (license === 'WTFPL') {
 
+    return '[![License: WTFPL](https://img.shields.io/badge/License-WTFPL-brightgreen.svg)](http://www.wtfpl.net/about/)'
+
+  }
+
+  else if (license === 'None') {
+
+    return ''
+  }
+
+}
 
 // TODO: Create a function to generate markdown for README
 // ============ GENERATE MARKDOWN FUNCTION ================
 // user input from terminal fills the interpolated strings
 
-function generateMarkdown(response) {
+function generateMarkdown({title, description, installation, usage, contribute, test, link, email, license }) {
 
   return `
-  # ${response.title} 
-
+  # ${title} ${renderLicenseBadge(license)}
   ## Description
 
-  ${response.description}
+  ${description}
  
   ## Table of Contents
 
@@ -43,36 +55,38 @@ function generateMarkdown(response) {
 
   Included is a step-by-step description of how to get the development environment running:
 
-    ${response.installation}
+    ${installation}
 
   ## Usage
 
-    ${response.usage}
+    ${usage}
 
   ## Contribution Guidelines
 
-    ${response.contribute}
+    ${contribute}
  
   ## Tests
 
   In order to test, open the console and run the following:
 
-    \`\`\` ${response.test} \`\`\`
+    \`\`\` ${test} \`\`\`
 
   ## Questions
 
   If you have any questions about the repo, please feel free to reach out.
 
-    GitHub Profile: ${response.link}
+    GitHub Profile: ${link}
 
-    Email: ${response.email}
+    Email: ${email}
 
----
+--- 
 
- ## License
+  ## License
 
-  This project is licensed under ${response.license} 
-`
+  This project is licensed under ${license} 
+  
+  `
+
 
 };
 

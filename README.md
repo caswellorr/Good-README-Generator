@@ -1,8 +1,8 @@
 
-  # Readme Generator 
-
+  # README Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
   ## Description
-  It produces a 
+
+  
  
   ## Table of Contents
 
@@ -18,32 +18,34 @@
 
   Included is a step-by-step description of how to get the development environment running:
 
-    uses inquirer and file sysytem nodes
+    
 
   ## Usage
 
-    acces in terminal with node 
+    
 
   ## Contribution Guidelines
 
-    everything goes
+    
  
   ## Tests
 
   In order to test, open the console and run the following:
 
-    ``` testing testing ```
+    ```  ```
 
   ## Questions
 
   If you have any questions about the repo, please feel free to reach out.
 
-    GitHub Profile: github.com
+    GitHub Profile: 
 
-    Email: caswell.orr@github.com
+    Email: 
 
----
+--- 
 
- ## License
+  ## License
 
   This project is licensed under MIT 
+  
+  
