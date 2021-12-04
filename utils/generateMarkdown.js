@@ -23,15 +23,15 @@ function generateMarkdown({title, description, installation, usage, contribute, 
 
   Included is a step-by-step description of how to get the development environment running:
 
-    ${installation}
+  ${installation}
 
   ## Usage
 
-    ${usage}
+  ${usage}
 
   ## Contribution Guidelines
 
-    ${contribute}
+  ${contribute}
  
   ## Tests
 
@@ -43,9 +43,9 @@ function generateMarkdown({title, description, installation, usage, contribute, 
 
   If you have any questions about the repo, please feel free to reach out.
 
-    GitHub Profile: ${link}
+  GitHub Profile: ${link}
 
-    Email: ${email}
+  Email: ${email}
 
 --- 
 
