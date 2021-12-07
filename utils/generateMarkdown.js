@@ -1,13 +1,15 @@
 
 // ============ GENERATE MARKDOWN FUNCTION ================
 
-function generateMarkdown({title, description, installation, usage, contribute, test, link, email, license }) {
+function generateMarkdown({title, description, link, installation, usage, contribute, test, gitHub, email, license }) {
 
   return `
   # ${title} ${renderLicenseBadge(license)}
   ## Description
 
   ${description}
+
+  Link : [Click Here](${link})
  
   ## Table of Contents
 
@@ -43,9 +45,11 @@ function generateMarkdown({title, description, installation, usage, contribute, 
 
   If you have any questions about the repo, please feel free to reach out.
 
-  GitHub Profile: ${link}
+  GitHub Profile: ${gitHub}
 
   Email: ${email}
+
+  Links: 
 
 --- 
 

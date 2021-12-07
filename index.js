@@ -24,8 +24,8 @@ const prompts = [
   },
   {
     type: 'input',
-    name: 'Table of Contents',
-    message: 'If your README is long, a table of contents makes it easy for users to find what they need.'
+    name: 'link',
+    message: 'Please include a relevant link here: '
   },
   {
     type: 'input',
@@ -49,7 +49,7 @@ const prompts = [
   },
   {
     type: 'input',
-    name: 'link',
+    name: 'gitHub',
     message: 'Please enter the link to your GitHub profile: '
   },
   {
